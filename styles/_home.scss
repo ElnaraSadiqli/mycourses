@@ -1,0 +1,611 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+// //...//......HOME.........//...//
+#home {
+
+    // Home lab -image //
+    .home-section-img {
+        width: 100%;
+        position: relative;
+        top: 5rem;
+        min-height: 27.5rem;
+        background-position-x: -2.8rem;
+
+        //  Home Gradient on Lab Image
+        .lab-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: multiply;
+            right: 1rem;
+            left: 0%;
+        }
+
+        // Home Content and Images
+        .home-layout {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            // Container home content 
+            .hc-container {
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                //Home-Content
+                #home-content {
+                    color: $clr-white;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    #home-content-left {
+                        max-width: 49%;
+
+                        // H-Content Title //
+                        h1 {
+                            color: $clr-white;
+                            @extend .h1-size;
+                        }
+
+                        // //H-Content Text
+                        p {
+                            @extend .h5-size-max;
+                            color: $clr-white;
+                        }
+
+                        // //H-Content  Bottom in Left
+                        .home-content-left-btn {
+                            margin-top: 2rem;
+
+                            //     // 'Join Free' button
+                            .join-free-btn {
+                                padding: 1rem 3.1rem;
+                                border: 1px solid transparent;
+                                border-radius: 62px;
+                                font: normal 500 1.2rem/3.5rem "TT Interphases DemiBold", serif;
+                                background-color: $btn-color-w;
+                                color: $clr-blu;
+                                @extend .button-transition;
+
+                                &:hover {
+                                    background-color: $btn-color-blu;
+                                    color: $clr-white;
+                                }
+                            }
+
+                            //Play Button on Lab Image
+                            .play-btn {
+                                width: 3.5rem;
+                                position: relative;
+                                height: 3.5rem;
+                                border-radius: 50%;
+                                background-color: rgba(255, 255, 255, 0.2);
+                                border: 1px solid transparent;
+                                color: $clr-white;
+                                margin-left: 2rem;
+
+                                // Ripple animation 
+                                .play-btn-ripple {
+                                    width: 3.5rem;
+                                    height: 3.5rem;
+                                    border: 1px solid rgba(255, 255, 255, 0.12);
+                                    border-radius: 50%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    animation: ripple 2.2s linear infinite;
+
+                                    &::before {
+                                        position: absolute;
+                                        content: '';
+                                        border: 1px solid rgba(255, 255, 255, 0.12);
+                                        width: 6rem;
+                                        height: 6rem;
+                                        border-radius: 50%;
+                                        top: -22px;
+                                        left: -22px;
+                                        z-index: -2;
+                                    }
+
+                                    &::after {
+                                        position: absolute;
+                                        content: '';
+                                        border: 1px solid rgba(255, 255, 255, 0.12);
+                                        width: 5rem;
+                                        height: 5rem;
+                                        border-radius: 50%;
+                                        top: -13px;
+                                        left: -13px;
+                                        z-index: -3;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    // //Home Content Social Media //
+                    #home-content-right {
+                        padding-top: 3rem;
+
+                        .home-cont-r-list {
+                            li {
+                                margin-bottom: 0.8rem;
+                                @extend .button-transition;
+
+                                a {
+                                    color: $clr-white;
+
+                                    &:hover {
+                                        color: rgba(176, 206, 255, 1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Loop Image //
+            .loop {
+
+                position: absolute;
+                align-self: flex-end;
+                bottom: 1.5rem;
+                left: 2.5rem;
+
+            }
+
+            // Atom Image //
+            .atom {
+                position: absolute;
+                left: 58.7%;
+                top: 41%;
+            }
+
+            // Globus Image //
+            .map {
+                position: absolute;
+                left: 77.7%;
+                top: 9.5%;
+            }
+        }
+    }
+}
+
+// ....//.........Partners......//...//
+#partners {
+    margin-top: 7rem;
+
+    //    Partners Title
+    .partners-title {
+        margin-bottom: 2rem;
+        text-align: center;
+        @extend .h5-size-min;
+
+        p a {
+            color: $clr-blu;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    //  Partners Carusel Slider
+    & .partner-carusel {
+        height: 5rem;
+        width: 100%;
+        border-bottom: 1px solid #E4E8EE;
+        display: flex;
+        justify-content: center;
+
+        // Partners Item
+        & .item {
+            margin-left: 4rem;
+        }
+    }
+}
+
+// //...//.........Knowledge......//...//
+#knowledge {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 5.2rem;
+
+    // // Knowledge Content
+    .knw-content {
+        margin-top: 0.5rem;
+
+        // Knowledge Title
+        .know-title {
+            @extend .h2-size-min;
+
+            span {
+                color: $clr-blu;
+                cursor: pointer;
+            }
+        }
+
+        // Knwledge Subtitle
+        .know-subtitle {
+            @extend .h5-size-min;
+            color: $clr-dark-gry;
+            padding: 1rem 0px 3rem 0px;
+        }
+    }
+
+    // // Knowledge Cards
+    .know-cards {
+        display: flex;
+        justify-content: space-evenly;
+
+        // // Knowledge of Card
+        .knw-card {
+            cursor: pointer;
+            border: 1px solid transparent;
+            width: 17.25rem;
+            height: 20.75rem;
+            padding-top: 3rem;
+            @extend .button-transition;
+
+            //Knowledge Hover  Effect
+            &:hover {
+                box-shadow: 0px 4px 40px 0px rgba(51, 51, 51, 0.1);
+                border: 1px solid $clr-gry;
+                background-color: transparent;
+                border-radius: 5px;
+            }
+
+            // // Knowledge Card All Content
+            .login-btn-know {
+
+                // Knowledge Card Image
+                .card-img-top {
+                    height: 5rem;
+                    width: 5.125rem;
+                    object-fit: contain;
+                }
+
+                // Knowledge Card Title
+                .card-title {
+                    @extend .h4-size-max;
+                    color: $clr-blck;
+                    margin-top: 0.5rem;
+                }
+
+                // Knowledge Card SubTitle
+                .card-text {
+                    color: $clr-dark-gry;
+                    @extend .h5-size-min;
+                }
+
+                // Knowledge Card Footer Nav
+                .knw-card-nav {
+                    padding: 1.5rem;
+                    color: $clr-dark-gry;
+                    @extend .h4-size-min;
+                }
+
+            }
+
+
+        }
+    }
+}
+
+// //...//.......Expression........//...//
+#expression {
+    background: url("../images/Expression/expression.png") no-repeat center;
+    background-size: cover;
+    min-height: 30, 75rem;
+    position: relative;
+
+    // Expression Gradient
+    .expression-gradient {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: multiply;
+    }
+
+
+    // Expression Layout
+    .exp-container {
+        overflow: hidden;
+
+        // // Quotes Expression
+        .quotes-expression {
+            position: absolute;
+            top: 4rem;
+        }
+
+        // Expression Layout slider
+        .exp-slider {
+            width: 50%;
+            overflow: hidden;
+
+            // Expression content
+            .expression-content {
+                display: flex;
+                width: 200%;
+                transition: all 0.8s ease-in;
+
+                .exp-content {
+                    padding: 7.8rem 3px 4rem;
+                    position: relative;
+                    color: $clr-white;
+                    width: 39.75rem;
+
+                    // Expression title
+                    p:nth-child(1) {
+                        @extend .h3-size-max;
+                    }
+
+                    // Expression subTitle
+                    p:nth-child(2) {
+                        @extend .h6-size-max;
+                        margin: 2rem 0rem;
+                    }
+
+                    // Expression fullName
+                    p:nth-child(3) {
+                        @extend .h5-size-min;
+                        margin-bottom: 2rem;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        // Expression Profile Images
+        .exp-content-img {
+            position: relative;
+            bottom: 4rem;
+
+            img {
+                width: 3.75rem;
+                height: 3.75rem;
+                border-radius: 3.75rem;
+                cursor: pointer;
+                @extend .button-transition;
+                margin-right: 1.5rem;
+
+                &:hover {
+                    filter: opacity(0.5);
+                }
+            }
+
+            .op-img {
+                filter: opacity(0.5);
+            }
+        }
+
+
+    }
+}
+
+// //...//..... Instruction.......//...//
+#instruction {
+    padding: 5rem 0rem 3rem;
+
+    .instruction-layout {
+        align-items: center;
+
+        // Instruction Left
+        .instruction-left {
+
+            // İnstuction İmage
+            .img-contain {
+                width: 100%;
+                height: 414.812px;
+                object-fit: contain;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 74px;
+                    height: 74px;
+                    border-radius: 50%;
+                    background-color: #A4D9F9;
+
+                }
+            }
+
+            //     // // Total Instructions
+            //    .curcle-total {
+            //         width: 140px;
+            // height: 140px;
+            // border-radius: 50%;
+            // background-color: $btn-color-blu;
+            //         position        : relative;
+            //         bottom          : 3rem*2.7;
+            //         left            : 3rem*4.70;
+
+            //        .total-count {
+            //             @extend .h2-size-min;
+            //             color       : $txt-color-blu;
+            //             line-height : 32px;
+            //             padding-top : 2rem;
+            //             padding-left: 2.4rem
+            //         }
+
+            //        .total-type {
+            //             @extend .h5-size-max;
+            //             position: relative;
+            //             left    : 2.5rem;
+
+            //         }
+            //     }
+
+        }
+
+
+        //     // Blue Curcle on İmage
+
+        //    .ins-l-before::before {
+
+        //         content         : '';
+        //         display         : block;
+        //        
+        //         position        : relative;
+        //         top             : 7rem;
+        //         left            : 3.2rem;
+
+
+        //     }
+
+        // Error 1 Grey Curcle on İmage
+
+        // & .ins-l-before ::after{
+        //     content         : '';
+        //     display         : block;
+        //     width           : 43px;
+        //     height          : 43px;
+        //     border-radius   : 50%;
+        //     background-color: #EDF2F5;
+        // }
+
+
+        //Instruction Right Content
+        .instruction-right {
+            color: $clr-blck;
+
+            //Instruction Title
+            .instruction-tt {
+                @extend .h5-size-min;
+                text-transform: uppercase;
+                position: relative;
+                left: 1rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 3px;
+                    height: 1.4rem;
+                    left: -1rem;
+                    background-color: $clr-blu;
+                }
+            }
+
+            //Instruction SubTitle
+            .instruction-subtt {
+                @extend .h2-size-max;
+                padding: 1rem 0px 1rem;
+            }
+
+            //Instruction Description
+            .instruction-desc {
+                @extend .h6-size-max;
+            }
+
+            // Instruction Button
+            .instruction-btn {
+                margin-top: 3rem;
+                @include big-btn(134.81px);
+                background-color: $btn-color-blu;
+                padding-top: 14px;
+                text-align: center;
+                color: $clr-white;
+
+                &:hover {
+                    border: 1px solid $clr-blu;
+                    background-color: white;
+                    color: $clr-blu;
+                }
+            }
+
+        }
+
+
+
+
+
+
+        // //......//... Oppartunity....//....//...//
+        // #opportunity {
+        //     background-color: #EDF2F5;
+        //     position        : relative;
+        //     bottom          : 10rem*3.7;
+
+
+        //    .op-layout {
+        //         display        : flex;
+        //         align-items    : center;
+        //         justify-content: center;
+
+        //         // Opportunity Content in Left
+
+        //        .op-left {
+        //             padding-right: 1.5rem;
+
+        //             //   Opportunity Title
+        //            .op-tt {
+        //                 @extend .h5-size-min;
+        //             }
+
+        //             //   Opportunity SubTitle 
+        //            .op-subtt {
+        //                 @extend .h2-size-max;
+
+        //             }
+
+        //             //   Opportunity Description  
+        //            .op-desc {
+        //                 @extend .h6-size-max;
+        //             }
+        //         }
+
+        //         // Opportunity blue line
+        //        .op-l-before::before {
+        //             @extend .blue-line;
+        //         }
+
+        //         // Opportunity Content in Right
+        //        .op-right {
+
+        //            :nth-child(1) {
+        //                 width : 26.25rem;
+        //                 height: 26.25rem;
+        //                 margin-top: 3rem;
+
+        //                 object-fit: contain;
+        //             }
+
+        //             & :nth-child(2) {
+        //                 width : 207px;
+        //                 height: 157.781px;
+        //                 position: relative;
+        //                 bottom: 18.5rem;
+        //              right: 7rem;
+        //              object-fit: contain;
+
+        //              vertical-align: middle;
+
+
+        //             }
+
+        //         }
+
+        //     }
+        // }
+    }
+}

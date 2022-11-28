@@ -1,0 +1,25 @@
+// Reser.scss file//
+
+
+//...... Buttons Template ...//
+
+// Height-40px button
+
+@mixin small-btn($b-width) {
+    height       : 2.5rem;
+    border-radius: 2px;
+    border       : 1px solid transparent;
+    width        : $b-width;
+    @extend .button-transition;
+}
+
+// Height-56px button
+
+@mixin big-btn($b-width) {
+    display      : block;
+    height       : 3.5rem;
+    width        : $b-width;
+    border-radius: 2px;
+    border       : 1px solid transparent;
+    @extend .button-transition;
+}
